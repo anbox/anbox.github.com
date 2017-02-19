@@ -1,0 +1,35 @@
+languageCode = "en-us"
+title = "Anbox"
+baseurl = "http://anbox.io/"
+theme = "hugo-universal-theme"
+
+[params]
+    author = "The Anbox authors"
+    date_format = "January 2, 2006"
+
+[params.carousel]
+    enable = true
+
+[params.features]
+    enable = true
+
+[params.widgets]
+    search = true
+    categories = true
+    tags = true
+
+[[params.menu]]
+  name = "blog"
+  weight = 400
+  identifier = "blog"
+  url = "/blog/"
+[[params.menu]]
+  name = "documentation"
+  identifier = "documentation"
+  weight = 200
+  url = "/documentation/"
+[[params.menu]]
+  name = "about"
+  identifier = "about"
+  weight = 300
+  url = "/about/"

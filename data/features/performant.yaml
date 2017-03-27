@@ -1,4 +1,0 @@
-weight: 3
-name: "Performant"
-icon: "fa fa-clock-o"
-description: "Uses the hypervisor of the host platform and seamlessly bridges over hardware acceleration features."

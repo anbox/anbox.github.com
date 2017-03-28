@@ -21,11 +21,11 @@ params:
             - icon: fa-github
               title: Open Source
               description: |
-                The whole source is available as Open Source. No binary blobs!
+                The whole source code is available as Open Source and licensed under the terms of the Apache and GPLv3 license.
             - icon: fa-laptop
               title: No limits
               description: |
-                As Anbox is running an entire Android system there are no limits which applications you can run.
+                As Anbox is running an entire Android system and there are no limits which applications you can run.
             - icon: fa-lock
               title: Secure
               description: |
@@ -38,3 +38,8 @@ params:
               title: Integrated
               description: |
                 Tightly integrated with the host operating system to offer a reach feature set.
+            - icon: fa-microchip
+              title: Convergent
+              description: |
+                Anbox scales across different form factors similar like
+                Android does. It works on a laptop and a mobile phone.

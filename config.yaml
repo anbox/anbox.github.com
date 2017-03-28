@@ -9,34 +9,20 @@ params:
     description: Android in a Box
     favicon: favicon.ico
 
-    navigation:
-        brand: Anbox - Android in a Box
-        links:
-            about: About
-            services: Features
-            contact: FAQ
-
     hero:
         slogan: "Android in a Box"
         subtitle: "Run Android applications on any GNU Linux operating system."
         buttonText: "Find out more"
-
-    about:
-        headline: "How does it work?"
-        description: |
-
-        button:
-            text: Get started!
-            link: "#aside"
 
     services:
         headline: "Features"
         list:
             - icon: fa-github
               title: Open Source
-              description: "The whole source is available as Open Source. No binary blobs!"
+              description: |
+                The whole source is available as Open Source. No binary blobs!
             - icon: fa-laptop
-              title: "No limits"
+              title: No limits
               description: |
                 As Anbox is running an entire Android system there are no limits which applications you can run.
             - icon: fa-lock
@@ -47,6 +33,7 @@ params:
               title: Performant
               description: |
                 Runs Android without hardware virtualization and seamlessly bridges over hardware acceleration features.
-
-    faq:
-        headline: FAQ
+            - icon: fa-microchip
+              title: Integrated
+              description: |
+                Tightly integrated with the host operating system to offer a reach feature set.

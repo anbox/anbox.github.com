@@ -25,7 +25,7 @@ params:
             - icon: fa-laptop
               title: No limits
               description: |
-                As Anbox is running an entire Android system and there are no limits which applications you can run.
+                As Anbox is running an entire Android system and conceptually any application can run.
             - icon: fa-lock
               title: Secure
               description: |
@@ -37,7 +37,7 @@ params:
             - icon: fa-microchip
               title: Integrated
               description: |
-                Tightly integrated with the host operating system to offer a reach feature set.
+                Tightly integrated with the host operating system to offer a rich feature set.
             - icon: fa-microchip
               title: Convergent
               description: |

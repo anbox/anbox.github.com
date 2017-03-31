@@ -58,7 +58,6 @@
         </header>
 
         <section class="bg-primary" id="about" style="padding: 50px 0;">
-            <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2 class="section-heading text-center">How does it work?</h2>
@@ -74,12 +73,7 @@
                             containers (LXC) to separate the Android operating system from
                             the host. The Android version doesn't matter for this approach
                             and we try to keep always with the latest available version
-                            from the <a target="_blank" href="https://source.android.com/">
-                            Android Open Source project</a>.
-                        </p>
-                        <p>
-                            <b>WARNING:</b> Anbox is currently still pre-alpha level software. Not
-                            everything is correctly or is fully implemented yet.
+                            from the Android Open Source project.
                         </p>
                         <div class="text-center">
                             <a href="#get-started" class="btn btn-default btn-xl page-scroll">Get started!</a>
@@ -139,8 +133,15 @@
                                 the installer requires root privileges on your systems as
                                 it has to install things like additional kernel modules
                                 via <a target="_blank" href="https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">DKMS</a>.
-                                You can have a look at the installer script 
+                                You can have a look at the installer script
                                 <a target="_blank" href="https://github.com/anbox/anbox-installer/blob/master/installer.sh">here</a>.
+                            </p>
+                            <p>
+                                <b>WARNING:</b> Before you go ahead an install Anbox on your system, please
+                                keep in mind that Anbox currently is ALPHA level software. Not every feature
+                                is supposed to work or to work well yet. You will find bugs, you will crashes
+                                and unexpected problems. If you do so please report a bug
+                                <a target="_blank" href="https://github.com/anbox/anbox/issues/new">here</a>.
                             </p>
                             <p>
                                 When you're ready to install Anbox on your system
@@ -198,7 +199,7 @@
                     <div id="collapse2" class="collapse">
                         <p>
                             Yes, this is generally possible. However Google doesn't allow anyone
-                            to ship its applications as long as the device is not certified and then
+                            to ship its applications as long as the device is not certified and the
                             vendor didn't sign an agreement with Google.
                         </p>
                         <p>
@@ -236,15 +237,19 @@
                             applications in a very similar way as we do. Both approaches
                             are quite similar as both put Android into a lightweight
                             system container based on Linux namespaces and keep a small
-                            bridge to allow communication with the host system. In
-                            contrast to Googles implementation in Chrome OS Anbox doesn't
-                            allow any access to real hardware and also bridge Open GL
+                            bridge to allow communication with the host system.
+                        </p>
+                        <p> In contrast to Googles implementation Anbox doesn't
+                            allow any direct access to hardware devices. For example it bridges Open GL
                             ES to the host. In Chrome OS the container gets access to the
                             host kernel side of the graphic subsystem to allow fast
-                            rendering. In our case we decided against this to keep the
-                            portability high and easy. All a host operating system needs
-                            is a Open GL / Open GL ES compatible driver to provide proper
-                            integration with the graphics subsystem.
+                            rendering. In our case we decided against this to keep an easy
+                            way to port Anbox to different platforms. All a host operating
+                            system needs to provide is a Open GL / Open GL ES compatible
+                            driver to provide proper integration
+                            with the graphics subsystem. Other hardware devices like WiFi
+                            or Bluetooth will be abstracted in the future via a dedicated
+                            APIs between the container and the host.
                         </p>
                     </div>
                 </div>
@@ -281,6 +286,41 @@
                     </div>
                 </div>
 
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Anbox doesn't start on my device. What I do wrong?</a></h3>
+                    <div id="collapse6" class="collapse">
+                        <p>
+                            Most likely it's not your fault. Anbox is still in its early days
+                            and doesn't have much test coverage across a wide range of different
+                            systems yet. If Anbox doesn't start for you, please follow the
+                            instructions <a target="_blank" href="https://github.com/anbox/anbox/issues/new">
+                            here</a> and file a bug report so that a developer can look into the problem.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">You say Anbox is covergent. Does it run on phones today?</a></h3>
+                    <div id="collapse7" class="collapse">
+                        <p>
+                            The initial proof-of-concept was done on an
+                            <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>
+                            based device. Since then Anbox has evolved quite a bit and main development
+                            focus are desktop devices today. However recent experiments show that
+                            Anbox still runs fine (with a few tweaks and lifted confinement because
+                            of older kernel versions) on mobile devices based on
+                            <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>.
+                        </p>
+                        <p>
+                            We know that other projects like <a target="_blank" href="https://ubports.com/">
+                            UBports</a> or <a target="_blank" href="http://webos-ports.org/wiki/Main_Page">
+                            LuneOS</a> are highly interested in running Anbox as part of their distribution.
+                            There is already a close relationship with people from these communities, but concrete
+                            plans are not yet available.
+                        </p>
+                    </div>
+                </div>
+
               </div>
             </div>
         </section>
@@ -310,9 +350,14 @@
                 <div class="row">
                     <div class="text-center col-md-6 col-md-offset-3">
                         <ul class="list-inline">
-                            <li><a class="fa-github fa-3x" href="https://github.com/anbox/anbox"></a></li>
+                            <li><a class="fa-github fa-3x" style="color: white;" target="_blank" href="https://github.com/anbox/anbox"></a></li>
                         </ul>
-                        <p style="font-size: 10pt;">Copyright &copy; The Anbox Developer 2017</p>
+                        <p style="font-size: 10pt;">Copyright &copy; The Anbox Developers 2017</p>
+                        <p style="font-size: 10pt;">
+                            Website powered by <a target="_blank" href="https://gothugo.io">hugo</a>
+                            and the <a target="_blank" href="https://github.com/digitalcraftsman/hugo-creative-theme">creative theme</a>.
+                            Hosted by GitHub.
+                        </p>
                     </div>
                 </div>
             </div>

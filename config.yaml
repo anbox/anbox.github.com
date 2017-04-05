@@ -1,0 +1,45 @@
+baseURL: "http://anbox.io/"
+absURL: "http://anbox.io/"
+languageCode: "en-us"
+title: "Anbox - Android in a Box"
+theme: "hugo-creative-theme"
+googleAnalytics: UA-92540921-1
+
+params:
+    name: Anbox
+    description: Android in a Box
+    favicon: favicon.ico
+
+    hero:
+        slogan: "Android in a Box"
+        subtitle: "Run Android applications on any GNU Linux operating system."
+        buttonText: "Find out more"
+
+    services:
+        headline: "Features"
+        list:
+            - icon: fa-github
+              title: Open Source
+              description: |
+                The whole source code is available as Open Source and licensed under the terms of the Apache and GPLv3 license.
+            - icon: fa-laptop
+              title: No limits
+              description: |
+                As Anbox is running an entire Android system and conceptually any application can run.
+            - icon: fa-lock
+              title: Secure
+              description: |
+                Anbox puts Android apps into a tightly sealed box without direct access to hardware or your data.
+            - icon: fa-clock-o
+              title: Performant
+              description: |
+                Runs Android without hardware virtualization and seamlessly bridges over hardware acceleration features.
+            - icon: fa-microchip
+              title: Integrated
+              description: |
+                Tightly integrated with the host operating system to offer a rich feature set.
+            - icon: fa-microchip
+              title: Convergent
+              description: |
+                Anbox scales across different form factors similar like
+                Android does. It works on a laptop and a mobile phone.

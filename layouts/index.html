@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+    <head>
+        {{ partial "head.html" . }}
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+    </head>
+    <body id="page-top">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">Anbox - Android in a Box</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#features">Features</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#get-started">Get started</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Get in Touch</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    {{ with .Site.Params.hero.slogan }}
+                        <h1>{{ . | markdownify  }}</h1>
+                    {{ end }}
+                    {{ if and .Site.Params.hero.slogan .Site.Params.hero.subtitle }}
+                        <hr>
+                    {{ end }}
+                    {{ with .Site.Params.hero.subtitle }}
+                        <p>{{ . | markdownify }}</p>
+                    {{ end }}
+                    {{ with .Site.Params.hero.buttonText }}
+                        <a href="#about" class="btn btn-primary btn-xl page-scroll">{{ . }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-primary" id="about" style="padding: 50px 0;">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <h2 class="section-heading text-center">How does it work?</h2>
+                        <hr class="light">
+                        <p>
+                            Anbox puts the Android operating system into a container, abstracts
+                            hardware access and integrates core system services into a GNU Linux
+                            system. Every Android application will behave integrated into your
+                            operating system like any other native application.
+                        </p>
+                        <p>
+                            To achieve our goal we use standard Linux technologies like
+                            containers (LXC) to separate the Android operating system from
+                            the host. The Android version doesn't matter for this approach
+                            and we try to keep always with the latest available version
+                            from the Android Open Source project.
+                        </p>
+                        <div class="text-center">
+                            <a href="#get-started" class="btn btn-default btn-xl page-scroll">Get started!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" style="padding: 50px 0;">
+            {{ with .Site.Params.services.headline }}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading">{{ . }}</h2>
+                            <hr class="primary">
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+            <div class="container">
+                <div class="row">
+                    {{ range .Site.Params.services.list }}
+                    <div class="col-lg-2 col-md-4 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x {{ .icon }} wow bounceIn text-primary"></i>
+                            <h3>{{ .title }}</h3>
+                            {{ with .description }}
+                                <p class="text-muted">{{ . }}</p>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+
+        <section id="get-started" style="padding: 0px 0;">
+            <aside>
+                <div class="container">
+                    <div class="call-to-action">
+                        <h2 class="text-center">Get started!</h2>
+                        <hr/>
+                        <div>
+                            <p>
+                                Installing Anbox on a regular Linux system isn't hard when you have already the ability
+                                to install <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Packaging anbox
+                                within a snap makes it really easy for us to put all necessary bits together and ship it to you!
+                            </p>
+                            <p>
+                                If your system doesn't support snaps, then we currently don't have an easy way for you to install
+                                Anbox. This might change though in the near future.
+                            </p>
+                            <p>
+                                Installing Anbox is pretty easy as we provide an installer which will install
+                                all necessary things on your system. Please be aware that
+                                the installer requires root privileges on your systems as
+                                it has to install things like additional kernel modules
+                                via <a target="_blank" href="https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">DKMS</a>.
+                                You can have a look at the installer script
+                                <a target="_blank" href="https://github.com/anbox/anbox-installer/blob/master/installer.sh">here</a>.
+                            </p>
+                            <p>
+                                <b>WARNING:</b> Before you go ahead an install Anbox on your system, please
+                                keep in mind that Anbox currently is ALPHA level software. Not every feature
+                                is supposed to work or to work well yet. You will find bugs, you will crashes
+                                and unexpected problems. If you do so please report a bug
+                                <a target="_blank" href="https://github.com/anbox/anbox/issues/new">here</a>.
+                            </p>
+                            <p>
+                                When you're ready to install Anbox on your system
+                                everything you need is the following command line. The
+                                installer will tell you about everything it is doing and
+                                will prompt for any further necessary input from your
+                                side:
+                            </p>
+                            <p style="font-family: Ubuntu Mono;">
+                                $ snap install --classic anbox-installer && anbox-installer
+                            </p>
+                            <p>
+                                If you need more help or want to see what happens during the installation you can have a
+                                look at the following screencast:
+                            </p>
+                            <p class="text-center">
+                                <a href="https://asciinema.org/a/9z0qms5148fg1mprs3ana1wnx" target="_blank">
+                                    <img src="https://asciinema.org/a/9z0qms5148fg1mprs3ana1wnx.png" width=400/>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section id="faq" style="padding: 30px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">FAQ</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+              <div class="" id="accordion">
+                <div>
+                  <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">What makes Anbox different from other projects like Shashlik or Genimobile?</a></h3>
+                  <div id="collapse1" class="collapse">
+                      <p>
+                          Projects like <a target="_blank" href="http://www.shashlik.io/">Shashlik</a>
+                          or <a target="_blank" href="https://www.genymobile.com/">Genimobile</a> use
+                          an emulator to run the Android environment. The emulator creates an entire
+                          emulated system which has its own kernel etc whereas Anbox runs the Android
+                          system under the same kernel as the host operating system does. There is no
+                          emulation layer like <a target="_blank" href="http://www.qemu-project.org/">
+                          QEMU</a> necessary. Everything runs directly on the hardware. This approach
+                          also allows a much better integration with the host operating system.
+                      </p>
+                  </div>
+                </div>
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Is it possible to install the Google Play Store?</a></h3>
+                    <div id="collapse2" class="collapse">
+                        <p>
+                            Yes, this is generally possible. However Google doesn't allow anyone
+                            to ship its applications as long as the device is not certified and the
+                            vendor didn't sign an agreement with Google.
+                        </p>
+                        <p>
+                            The Anbox project <b>does not</b> have any interest in shipping the
+                            Google Play store and we're not allowed to do so. We may add
+                            an easy way for our users at a later point which allows easy
+                            distribution of Android applications suited for the Anbox
+                            runtime environment.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">How can I install applications into the Anbox runtime?</a></h3>
+                    <div id="collapse3" class="collapse">
+                        <p>
+                            There is no easy way for a user yet to install applications into the
+                            Anbox runtime other than using the <a target="_blank" href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge (adb).</a>
+                            When you have adb installed on your host system you can install applications
+                            like this:
+                        </p>
+                        <p style="font-family: Ubuntu Mono; padding: 10px 0 5px 0;">
+                            $ adb install path/to/my-app.apk
+                        </p>
+                        <p>
+                            Afterwards your application should be installed as part of the Anbox runtime
+                            and can be launched via the host system application launcher.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Is there any relationship to Googles effort to bring Android applications to Chrome OS?</a></h3>
+                    <div id="collapse4" class="collapse">
+                        <p>
+                            Google is implementing support in Chrome OS for Android
+                            applications in a very similar way as we do. Both approaches
+                            are quite similar as both put Android into a lightweight
+                            system container based on Linux namespaces and keep a small
+                            bridge to allow communication with the host system.
+                        </p>
+                        <p> In contrast to Googles implementation Anbox doesn't
+                            allow any direct access to hardware devices. For example it bridges Open GL
+                            ES to the host. In Chrome OS the container gets access to the
+                            host kernel side of the graphic subsystem to allow fast
+                            rendering. In our case we decided against this to keep an easy
+                            way to port Anbox to different platforms. All a host operating
+                            system needs to provide is a Open GL / Open GL ES compatible
+                            driver to provide proper integration
+                            with the graphics subsystem. Other hardware devices like WiFi
+                            or Bluetooth will be abstracted in the future via a dedicated
+                            APIs between the container and the host.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse5">My favorite Android application doesn't work. What should I do?</a></h3>
+                    <div id="collapse5" class="collapse">
+                        <p>
+                            As we provide a complete Android system generally all
+                            applications are supposed to work. However there are a few
+                            exceptions:
+                        </p>
+                        <ul>
+                            <li>
+                                <p>
+                                    If your applicationd depends on particular hardware
+                                    functionality like wifi, bluetooth or telephony, we need
+                                    additional work to bridge those over from the host system. As
+                                    of right now the only thing you can do is to ensure your
+                                    application behaves correct when those functionalities are not
+                                    available.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Anbox uses the freeform mode introduced with Android 7
+                                    which allows a multi-window system. Your applications
+                                    need to play well within the freeform mode to work
+                                    well in Anbox. You can find more details in the
+                                    <a target="_blank" href="https://developer.android.com/guide/topics/ui/multi-window.html">
+                                    Android Developer Documentation</a>.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Anbox doesn't start on my device. What I do wrong?</a></h3>
+                    <div id="collapse6" class="collapse">
+                        <p>
+                            Most likely it's not your fault. Anbox is still in its early days
+                            and doesn't have much test coverage across a wide range of different
+                            systems yet. If Anbox doesn't start for you, please follow the
+                            instructions <a target="_blank" href="https://github.com/anbox/anbox/issues/new">
+                            here</a> and file a bug report so that a developer can look into the problem.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">You say Anbox is covergent. Does it run on phones today?</a></h3>
+                    <div id="collapse7" class="collapse">
+                        <p>
+                            The initial proof-of-concept was done on an
+                            <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>
+                            based device. Since then Anbox has evolved quite a bit and main development
+                            focus are desktop devices today. However recent experiments show that
+                            Anbox still runs fine (with a few tweaks and lifted confinement because
+                            of older kernel versions) on mobile devices based on
+                            <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>.
+                        </p>
+                        <p>
+                            We know that other projects like <a target="_blank" href="https://ubports.com/">
+                            UBports</a> or <a target="_blank" href="http://webos-ports.org/wiki/Main_Page">
+                            LuneOS</a> are highly interested in running Anbox as part of their distribution.
+                            There is already a close relationship with people from these communities, but concrete
+                            plans are not yet available.
+                        </p>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+        </section>
+
+        <section id="contact" style="padding: 40px 0;">
+            <div class="container">
+                <h2 class="section-heading text-center">Get in touch</h2>
+                <hr class="primary">
+                <p>
+                    Ready to start using Anbox and what to help developing it? We have
+                    development instructions available <a target="_blank" href="https://github.com/anbox/anbox/blob/master/README.md">here</a>
+                    which you can follow to get easily started.
+                </p>
+                <p>
+                    You will find all developers on the #anbox IRC channel on the
+                    <a href='https://freenode.net/'>FreeNode</a> network.
+                </p>
+                <p>
+                    If you find any bugs please report them on
+                    <a href='https://github.com/anbox/anbox/issues/new'>our Github project.</a>
+                </p>
+            </div>
+        </section>
+
+        <footer class="bg-dark">
+            <div class="container" style="padding: 30px 0;">
+                <div class="row">
+                    <div class="text-center col-md-6 col-md-offset-3">
+                        <ul class="list-inline">
+                            <li><a class="fa-github fa-3x" style="color: white;" target="_blank" href="https://github.com/anbox/anbox"></a></li>
+                        </ul>
+                        <p style="font-size: 10pt;">Copyright &copy; The Anbox Developers 2017</p>
+                        <p style="font-size: 10pt;">
+                            Website powered by <a target="_blank" href="https://gothugo.io">hugo</a>
+                            and the <a target="_blank" href="https://github.com/digitalcraftsman/hugo-creative-theme">creative theme</a>.
+                            Hosted by GitHub.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        {{ partial "js.html" . }}
+
+        {{ template "_internal/google_analytics.html" . }}
+    </body>
+</html>

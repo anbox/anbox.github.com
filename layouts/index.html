@@ -69,10 +69,15 @@
                             operating system like any other native application.
                         </p>
                         <p>
+                          <div class="text-center">
+                              <iframe width="560" height="315" src="https://www.youtube.com/embed/MbmiHnasGWg" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                        </p>
+                        <p>
                             To achieve our goal we use standard Linux technologies like
                             containers (LXC) to separate the Android operating system from
                             the host. The Android version doesn't matter for this approach
-                            and we try to keep always with the latest available version
+                            and as we try to keep up with the latest available version
                             from the Android Open Source project.
                         </p>
                         <div class="text-center">
@@ -119,7 +124,7 @@
                         <hr/>
                         <div>
                             <p>
-                                Installing Anbox on a regular Linux system isn't hard when you have already the ability
+                                Installing Anbox on a regular Linux system isn't hard when you already have the ability
                                 to install <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Packaging anbox
                                 within a snap makes it really easy for us to put all necessary bits together and ship it to you!
                             </p>
@@ -139,7 +144,7 @@
                             <p>
                                 <b>WARNING:</b> Before you go ahead an install Anbox on your system, please
                                 keep in mind that Anbox currently is ALPHA level software. Not every feature
-                                is supposed to work or to work well yet. You will find bugs, you will crashes
+                                is supposed to work or to work well yet. You will find bugs, you will see crashes
                                 and unexpected problems. If you do so please report a bug
                                 <a target="_blank" href="https://github.com/anbox/anbox/issues/new">here</a>.
                             </p>
@@ -264,11 +269,11 @@
                         <ul>
                             <li>
                                 <p>
-                                    If your applicationd depends on particular hardware
+                                    If your application depends on particular hardware
                                     functionality like wifi, bluetooth or telephony, we need
                                     additional work to bridge those over from the host system. As
                                     of right now the only thing you can do is to ensure your
-                                    application behaves correct when those functionalities are not
+                                    application behaves correct when these functionalities are not
                                     available.
                                 </p>
                             </li>
@@ -276,7 +281,7 @@
                                 <p>
                                     Anbox uses the freeform mode introduced with Android 7
                                     which allows a multi-window system. Your applications
-                                    need to play well within the freeform mode to work
+                                    needs to play well within the freeform mode to work
                                     well in Anbox. You can find more details in the
                                     <a target="_blank" href="https://developer.android.com/guide/topics/ui/multi-window.html">
                                     Android Developer Documentation</a>.
@@ -315,8 +320,8 @@
                             We know that other projects like <a target="_blank" href="https://ubports.com/">
                             UBports</a> or <a target="_blank" href="http://webos-ports.org/wiki/Main_Page">
                             LuneOS</a> are highly interested in running Anbox as part of their distribution.
-                            There is already a close relationship with people from these communities, but concrete
-                            plans are not yet available.
+                            There is already a close relationship with people from these communities, but
+                            concrete plans are not yet available and subject of each community project.
                         </p>
                     </div>
                 </div>
@@ -326,13 +331,13 @@
                     <div id="collapse8" class="collapse">
                         <p>
                             Anbox is currently only distributed as a snap as snaps makes the life
-                            for us developer pretty easy. It allows us fast and easy packaging,
+                            for us developers pretty easy. They allow us fast and easy packaging,
                             easy distribution to our users and regular and fast updates.
                             <a target="_blank" href="http://flatpak.org/">Flatpak</a>
                             would be another alternative but we didn't investigated this yet or
-                            are we planing for the near future. We're still happy for the community
-                            around Anbox to look into this and provide necessary changes to make
-                            Anbox working as a flatpak package.
+                            are we planing to do this in the near future. However, we're happy to
+                            accept contributions from the community around Anbox to provide necessary
+                            changes to distribute Anbox as a flatpak package too.
                         </p>
                         <p>
                             One thing which Anbox currently not does is using proper confinement
@@ -341,6 +346,13 @@
                             devmode of snaps which disables any confinement. This is something we
                             will work on over the coming months with upstream to allow our snap
                             to be fully confined.
+                        </p>
+                        <p>
+                            Despite snap confinement being disable the Android system
+                            still stays separate through the use of <a
+                            href="https://en.wikipedia.org/wiki/Linux_namespaces"
+                            target="_blank">Linux namespaces</a> from
+                            the host system.
                         </p>
                     </div>
                 </div>

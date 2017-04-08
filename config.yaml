@@ -25,7 +25,7 @@ params:
             - icon: fa-laptop
               title: No limits
               description: |
-                As Anbox is running an entire Android system and conceptually any application can run.
+                As Anbox is running an entire Android system, conceptually any application can run.
             - icon: fa-lock
               title: Secure
               description: |

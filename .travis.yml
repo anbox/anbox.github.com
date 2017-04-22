@@ -5,7 +5,7 @@ go:
 
 env:
   global:
-    - SSH_KEY="id_rsa"
+    - SSH_KEY="travis_key"
     - GIT_NAME="Simon Fels"
     - GIT_EMAIL="morphis@gravedo.de"
     - SOURCE_DIR="public"

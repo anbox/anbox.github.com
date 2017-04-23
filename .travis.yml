@@ -24,4 +24,5 @@ script:
   - hugo
 
 after_success:
+  - echo "anbox.io" > ./public/CNAME
   - ./scripts/deploy.sh

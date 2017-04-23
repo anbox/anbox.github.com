@@ -65,7 +65,7 @@
                         <p>
                             Anbox puts the Android operating system into a container, abstracts
                             hardware access and integrates core system services into a GNU/Linux
-                            system. Every Android application will behave integrated into your
+                            system. Every Android application will be integrated with your
                             operating system like any other native application.
                         </p>
                         <p>
@@ -76,9 +76,9 @@
                         <p>
                             To achieve our goal we use standard Linux technologies like
                             containers (LXC) to separate the Android operating system from
-                            the host. The Android version doesn't matter for this approach
+                            the host. Any Android version is suitable for this approach
                             and we try to keep up with the latest available version
-                            from the Android Open Source project.
+                            from the Android Open Source Project.
                         </p>
                         <div class="text-center">
                             <a href="#get-started" class="btn btn-default btn-xl page-scroll">Get started!</a>
@@ -130,7 +130,7 @@
                             </p>
                             <p>
                                 If your system doesn't support snaps, then we currently don't have an easy way for you to install
-                                Anbox. This might change though in the near future.
+                                Anbox. However, this might change in the near future.
                             </p>
                             <p>
                                 Installing Anbox is pretty easy as we provide an installer which will install
@@ -142,10 +142,10 @@
                                 <a target="_blank" href="https://github.com/anbox/anbox-installer/blob/master/installer.sh">here</a>.
                             </p>
                             <p>
-                                <b>WARNING:</b> Before you go ahead an install Anbox on your system, please
+                                <b>WARNING:</b> Before you go ahead and install Anbox on your system, please
                                 keep in mind that Anbox currently is ALPHA level software. Not every feature
-                                is supposed to work or to work well yet. You will find bugs, you will see crashes
-                                and unexpected problems. If you do so please report a bug
+                                is supposed to work or work well yet. You will find bugs, you will see crashes
+                                and unexpected problems. When you do so, please report a bug
                                 <a target="_blank" href="https://github.com/anbox/anbox/issues/new">here</a>.
                             </p>
                             <p>
@@ -192,9 +192,9 @@
                           or <a target="_blank" href="https://www.genymobile.com/">Genimobile</a> use
                           an emulator to run the Android environment. The emulator creates an entire
                           emulated system which has its own kernel etc whereas Anbox runs the Android
-                          system under the same kernel as the host operating system does. There is no
-                          emulation layer like <a target="_blank" href="http://www.qemu-project.org/">
-                          QEMU</a> necessary. Everything runs directly on the hardware. This approach
+                          system under the same kernel as the host operating system does. No emulation
+                          layer like <a target="_blank" href="http://www.qemu-project.org/">QEMU</a> 
+                          is necessary. Everything runs directly on the hardware. This approach
                           also allows a much better integration with the host operating system.
                       </p>
                   </div>
@@ -220,8 +220,8 @@
                     <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">How can I install applications into the Anbox runtime?</a></h3>
                     <div id="collapse3" class="collapse">
                         <p>
-                            There is no easy way for a user yet to install applications into the
-                            Anbox runtime other than using the <a target="_blank" href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge (adb).</a>
+                            There is no easy way yet for a user to install applications into the
+                            Anbox runtime, other than using the <a target="_blank" href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge (adb).</a>
                             When you have adb installed on your host system you can install applications
                             like this:
                         </p>
@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Is there any relationship to Googles effort to bring Android applications to Chrome OS?</a></h3>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Is there any relationship to Google's effort to bring Android applications to Chrome OS?</a></h3>
                     <div id="collapse4" class="collapse">
                         <p>
                             Google is implementing support in Chrome OS for Android
@@ -244,11 +244,11 @@
                             system container based on Linux namespaces and keep a small
                             bridge to allow communication with the host system.
                         </p>
-                        <p> In contrast to Googles implementation Anbox doesn't
+                        <p> In contrast to Google's implementation, Anbox doesn't
                             allow any direct access to hardware devices. For example it bridges Open GL
                             ES to the host. In Chrome OS the container gets access to the
                             host kernel side of the graphic subsystem to allow fast
-                            rendering. In our case we decided against this to keep an easy
+                            rendering. In our case, we decided against this to keep an easy
                             way to port Anbox to different platforms. All a host operating
                             system needs to provide is a Open GL / Open GL ES compatible
                             driver to provide proper integration
@@ -270,7 +270,7 @@
                             <li>
                                 <p>
                                     If your application depends on particular hardware
-                                    functionality like wifi, bluetooth or telephony, we need
+                                    functionality like WiFi, Bluetooth or telephony, we need
                                     additional work to bridge those over from the host system. As
                                     of right now the only thing you can do is to ensure your
                                     application behaves correct when these functionalities are not
@@ -292,7 +292,7 @@
                 </div>
 
                 <div>
-                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Anbox doesn't start on my device. What I do wrong?</a></h3>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Anbox doesn't start on my device. What did I do wrong?</a></h3>
                     <div id="collapse6" class="collapse">
                         <p>
                             Most likely it's not your fault. Anbox is still in its early days
@@ -305,15 +305,14 @@
                 </div>
 
                 <div>
-                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">You say Anbox is covergent. Does it run on phones today?</a></h3>
+                    <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse7">You say Anbox is convergent. Does it run on phones today?</a></h3>
                     <div id="collapse7" class="collapse">
                         <p>
                             The initial proof-of-concept was done on an
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>
-                            based device. Since then Anbox has evolved quite a bit and main development
-                            focus are desktop devices today. However recent experiments show that
-                            Anbox still runs fine (with a few tweaks and lifted confinement because
-                            of older kernel versions) on mobile devices based on
+                            based device. Since then Anbox has evolved quite a bit, making desktop devices its main 
+                            development focus. However, recent experiments show that Anbox still runs fine (with a few
+                            tweaks and lifted confinement because of older kernel versions) on mobile devices based on
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>.
                         </p>
                         <p>
@@ -332,23 +331,22 @@
                         <p>
                             Anbox is currently only distributed as a snap as snaps makes the life
                             for us developers pretty easy. They allow us fast and easy packaging,
-                            easy distribution to our users and regular and fast updates.
+                            easy distribution to our users, as well as regular and fast updates.
                             <a target="_blank" href="http://flatpak.org/">Flatpak</a>
-                            would be another alternative but we didn't investigated this yet or
-                            are we planing to do this in the near future. However, we're happy to
+                            would be another alternative but we didn't investigate this yet, nor
+                            are we planing to do so in the near future. However, we're happy to
                             accept contributions from the community around Anbox to provide necessary
                             changes to distribute Anbox as a flatpak package too.
                         </p>
                         <p>
-                            One thing which Anbox currently not does is using proper confinement
-                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. It's
-                            currently only usable when installed in the so called
-                            devmode of snaps which disables any confinement. This is something we
-                            will work on over the coming months with upstream to allow our snap
-                            to be fully confined.
+                            One thing which Anbox currently doesn't do is using proper confinement
+                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Right now it is 
+                            only usable when installed in the so-called devmode of snaps which disables any
+                            confinement. This is something we will work on over the coming months with upstream
+                            to allow our snap to be fully confined.
                         </p>
                         <p>
-                            Despite snap confinement being disable the Android system
+                            Despite snap confinement being disabled, the Android system
                             still stays separate through the use of <a
                             href="https://en.wikipedia.org/wiki/Linux_namespaces"
                             target="_blank">Linux namespaces</a> from
@@ -362,7 +360,7 @@
                     <div id="collapse9" class="collapse">
                         <p>
                             No. Anbox does not need a specific Android image for every
-                            device as it's is especially build in a device independent
+                            device as it is specifically built in a device independent
                             way. Anbox will ship with a single Android image per
                             architecture (amd64, armhf, arm64) and no device specifc
                             modifications are required.
@@ -379,7 +377,7 @@
                 <h2 class="section-heading text-center">Get in touch</h2>
                 <hr class="primary">
                 <p>
-                    Ready to start using Anbox and what to help developing it? We have
+                    Ready to start using Anbox and what to help develop it? We have
                     development instructions available <a target="_blank" href="https://github.com/anbox/anbox/blob/master/README.md">here</a>
                     which you can follow to get easily started.
                 </p>
@@ -413,6 +411,7 @@
                 </div>
             </div>
         </footer>
+
 
         {{ partial "js.html" . }}
 

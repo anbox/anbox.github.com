@@ -12,7 +12,7 @@ params:
 
     hero:
         slogan: "Android in a Box"
-        subtitle: "Run Android applications on any GNU Linux operating system."
+        subtitle: "Run Android applications on any GNU/Linux operating system."
         buttonText: "Find out more"
 
     services:

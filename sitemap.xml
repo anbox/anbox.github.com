@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://anbox.io/</loc>
+    <loc>https://anbox.io/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://anbox.io/categories/</loc>
+    <loc>https://anbox.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://anbox.io/tags/</loc>
+    <loc>https://anbox.io/tags/</loc>
     <priority>0</priority>
   </url>
   

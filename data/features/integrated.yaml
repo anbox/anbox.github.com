@@ -1,0 +1,4 @@
+weight: 2
+name: "Integrated"
+icon: "fa fa-plug"
+description: "Deep integration with the host platform."

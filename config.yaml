@@ -1,5 +1,5 @@
-baseURL: "http://anbox.io/"
-absURL: "http://anbox.io/"
+baseURL: "https://anbox.io/"
+absURL: "https://anbox.io/"
 languageCode: "en-us"
 title: "Anbox - Android in a Box"
 theme: "hugo-creative-theme"
@@ -12,7 +12,7 @@ params:
 
     hero:
         slogan: "Android in a Box"
-        subtitle: "Run Android applications on any GNU Linux operating system."
+        subtitle: "Run Android applications on any GNU/Linux operating system."
         buttonText: "Find out more"
 
     services:

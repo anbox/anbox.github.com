@@ -19,8 +19,6 @@ before_script:
   - go get -u -v github.com/spf13/hugo
 
 script:
-  - mkdir themes
-  - git clone https://github.com/digitalcraftsman/hugo-creative-theme ./themes/hugo-creative-theme
   - hugo
 
 after_success:

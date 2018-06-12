@@ -3,7 +3,6 @@ absURL: "https://anbox.io/"
 languageCode: "en-us"
 title: "Anbox - Android in a Box"
 theme: "hugo-creative-theme"
-googleAnalytics: UA-92540921-1
 
 params:
     name: Anbox

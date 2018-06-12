@@ -61,7 +61,15 @@ p {
 }
 
 .bg-primary {
-    background-color: #009688;
+    background-color: #0a1922;
+}
+
+.bg-secondary {
+    background-color: #f9f9f9;
+}
+
+.bg-tertiary {
+    background-color: #f4f4f4;
 }
 
 .bg-dark {
@@ -218,6 +226,14 @@ header .header-content .header-content-inner p {
     font-size: 16px;
     font-weight: 300;
     color: rgba(255,255,255,.7);
+}
+
+header .header-foot {
+    max-width: 100vw;
+    width: 1000px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
 }
 
 @media(min-width:768px) {
@@ -442,7 +458,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-primary .badge {
-    color: #009688;
+    color: #09688;
     background-color: #fff;
 }
 

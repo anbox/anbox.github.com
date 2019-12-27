@@ -70,8 +70,10 @@
                         </p>
                         <p>
                           <center>
-                          <div class="text-center embed-container">
-                              <iframe src="https://www.youtube.com/embed/MbmiHnasGWg" frameborder="0" allowfullscreen></iframe>
+                          <div class="text-center">
+                            <a target="_blank" href="https://www.youtube.com/embed/MbmiHnasGWg">
+                                <img src="img/video-preview.jpg"/>
+                            </a>
                           </div>
                         </center>
                         </p>
@@ -158,7 +160,7 @@
                           an emulator to run the Android environment. The emulator creates an entire
                           emulated system which has its own kernel etc whereas Anbox runs the Android
                           system under the same kernel as the host operating system does. No emulation
-                          layer like <a target="_blank" href="http://www.qemu-project.org/">QEMU</a> 
+                          layer like <a target="_blank" href="http://www.qemu-project.org/">QEMU</a>
                           is necessary. Everything runs directly on the hardware. This approach
                           also allows a much better integration with the host operating system.
                       </p>
@@ -275,7 +277,7 @@
                         <p>
                             The initial proof-of-concept was done on an
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>
-                            based device. Since then Anbox has evolved quite a bit, making desktop devices its main 
+                            based device. Since then Anbox has evolved quite a bit, making desktop devices its main
                             development focus. However, recent experiments show that Anbox still runs fine (with a few
                             tweaks and lifted confinement because of older kernel versions) on mobile devices based on
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>.
@@ -305,7 +307,7 @@
                         </p>
                         <p>
                             One thing which Anbox currently doesn't do is using proper confinement
-                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Right now it is 
+                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Right now it is
                             only usable when installed in the so-called devmode of snaps which disables any
                             confinement. This is something we will work on over the coming months with upstream
                             to allow our snap to be fully confined.

@@ -2,9 +2,23 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
     <head>
         {{ partial "head.html" . }}
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
     </head>
     <body id="page-top">
+        <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
+        <script>
+        window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#eaf7f7",
+                "text": "#5c7291"
+            },
+            "button": {
+                "background": "#009688",
+                "text": "#ffffff"
+            }
+        }
+        });
+        </script>
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">

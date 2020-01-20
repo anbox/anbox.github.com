@@ -6,20 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Anbox">
 <meta name="description" content="Android in a Box">
-<meta name="generator" content="Hugo 0.40.3" />
+<meta name="generator" content="Hugo 0.62.2" />
 <title>Anbox - Android in a Box</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="https://anbox.io/css/bootstrap.min.css" type="text/css">
 <!-- Custom Fonts -->
-<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://anbox.io/font-awesome/css/font-awesome.min.css" type="text/css">
 <!-- Plugin CSS -->
 <link rel="stylesheet" href="https://anbox.io/css/animate.min.css" type="text/css">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="https://anbox.io/css/creative.css" type="text/css">
 <link rel="stylesheet" href="https://anbox.io/css/modals.css" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-92540921-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+}
+</script>
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,9 +43,26 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
     </head>
     <body id="page-top">
+        <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
+        <script>
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#eaf7f7",
+                    "text": "#5c7291"
+                },
+                "button": {
+                    "background": "#009688",
+                    "text": "#ffffff"
+                }
+            },
+            "content": {
+                "href": "/privacy.html"
+            }
+        });
+        </script>
         <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -96,8 +128,10 @@
                         </p>
                         <p>
                           <center>
-                          <div class="text-center embed-container">
-                              <iframe src="https://www.youtube.com/embed/MbmiHnasGWg" frameborder="0" allowfullscreen></iframe>
+                          <div class="text-center">
+                            <a target="_blank" href="https://www.youtube.com/embed/MbmiHnasGWg">
+                                <img src="img/video-preview.jpg"/>
+                            </a>
                           </div>
                         </center>
                         </p>
@@ -241,7 +275,7 @@ Android does. It works on a laptop and a mobile phone.
                           an emulator to run the Android environment. The emulator creates an entire
                           emulated system which has its own kernel etc whereas Anbox runs the Android
                           system under the same kernel as the host operating system does. No emulation
-                          layer like <a target="_blank" href="http://www.qemu-project.org/">QEMU</a> 
+                          layer like <a target="_blank" href="http://www.qemu-project.org/">QEMU</a>
                           is necessary. Everything runs directly on the hardware. This approach
                           also allows a much better integration with the host operating system.
                       </p>
@@ -358,7 +392,7 @@ Android does. It works on a laptop and a mobile phone.
                         <p>
                             The initial proof-of-concept was done on an
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>
-                            based device. Since then Anbox has evolved quite a bit, making desktop devices its main 
+                            based device. Since then Anbox has evolved quite a bit, making desktop devices its main
                             development focus. However, recent experiments show that Anbox still runs fine (with a few
                             tweaks and lifted confinement because of older kernel versions) on mobile devices based on
                             <a target="_blank" href="https://www.ubuntu.com/mobile">Ubuntu Touch</a>.
@@ -388,7 +422,7 @@ Android does. It works on a laptop and a mobile phone.
                         </p>
                         <p>
                             One thing which Anbox currently doesn't do is using proper confinement
-                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Right now it is 
+                            for <a target='_blank' href='https://snapcraft.io/'>snaps</a>. Right now it is
                             only usable when installed in the so-called devmode of snaps which disables any
                             confinement. This is something we will work on over the coming months with upstream
                             to allow our snap to be fully confined.

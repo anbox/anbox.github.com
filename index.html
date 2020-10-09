@@ -327,12 +327,12 @@ Android does. It works on a laptop and a mobile phone.
                             bridge to allow communication with the host system.
                         </p>
                         <p> In contrast to Google's implementation, Anbox doesn't
-                            allow any direct access to hardware devices. For example it bridges Open GL
+                            allow any direct access to hardware devices. For example it bridges OpenGL
                             ES to the host. In Chrome OS the container gets access to the
                             host kernel side of the graphic subsystem to allow fast
                             rendering. In our case, we decided against this to keep an easy
                             way to port Anbox to different platforms. All a host operating
-                            system needs to provide is a Open GL / Open GL ES compatible
+                            system needs to provide is a OpenGL / OpenGL ES compatible
                             driver to provide proper integration
                             with the graphics subsystem. Other hardware devices like WiFi
                             or Bluetooth will be abstracted in the future via a dedicated
